@@ -2,8 +2,8 @@
 
 -- 1. Remove Duplicates
 
--- CREATE TABLE lifestyle_stagging
--- LIKE student_lifestyle_dataset;
+CREATE TABLE lifestyle_stagging
+LIKE student_lifestyle_dataset;
 
 SELECT * 
 FROM student_lifestyle_dataset;
@@ -38,11 +38,11 @@ FROM lifestyle_stagging;
 UPDATE lifestyle_stagging
 SET Study_Hours_PerDay = trim(Study_Hours_Per_Day);
 
---  SELECT DISTINCT Study_Hours_Per_Day, trim(TRAILING '.' FROM Study_Hours_Per_Day)
--- FROM lifestyle_stagging;
+SELECT DISTINCT Study_Hours_Per_Day, trim(TRAILING '.' FROM Study_Hours_Per_Day)
+FROM lifestyle_stagging;
 
--- SELECT CONVERT(Study_Hours_per_Day, DECIMAL(10, 2)) AS Study_Hours_Per_Day_in_decimal
--- FROM lifestyle_stagging;
+SELECT CONVERT(Study_Hours_per_Day, DECIMAL(10, 2)) AS Study_Hours_Per_Day_in_decimal
+FROM lifestyle_stagging;
 
 ALTER TABLE lifestyle_stagging MODIFY GPA DECIMAL(10,2);
 
@@ -52,6 +52,3 @@ SELECT * FROM student_lifestyle_dataset;
 
 ALTER TABLE lifestyle_stagging
 RENAME COLUMN Physical_Activity_Hours_Per_Day TO PhysicalActivity_Hours_PerDay;
-
--- 3. Null values or Blank values
--- 4. Remove any coloumns
