@@ -1,5 +1,4 @@
 -- Data Cleaning
-
 -- 1. Remove Duplicates
 
 CREATE TABLE lifestyle_stagging
@@ -14,13 +13,7 @@ FROM student_lifestyle_dataset;
 
 SELECT *,
 ROW_NUMBER() OVER(
-Student_ID, Study_Hours_Per_Day, Extracurricular_Hours_Per_Day, Sleep_Hours_Per_Day, Social_Hours_Per_Day, Physical_Activity_Hours_Per_Day, GPA, Stress_Level) AS row_num
-FROM lifestyle_stagging;
-
-WITH duplicate_cte AS
-
-SELECT *,
-ROW_NUMBER() OVER(Student_ID, Study_Hours_Per_Day, Extracurricular_Hours_Per_Day, Sleep_Hours_Per_Day, Social_Hours_Per_Day, Physical_Activity_Hours_Per_Day, GPA, Stress_Level) AS row_num
+Study_Hours_Per_Day) AS row_num
 FROM lifestyle_stagging;
 
 SELECT *
